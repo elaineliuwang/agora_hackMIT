@@ -1,4 +1,4 @@
-#agora - a decision making web app 
+# agora - a decision making web app 
 
 Created for HackMIT 2023 (not submitted in time due to technical problems)
 
