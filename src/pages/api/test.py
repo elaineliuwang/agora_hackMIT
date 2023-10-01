@@ -41,7 +41,7 @@ def main():
 
         output_list = []
         emotion_scores = {}
-
+        
         # making emotion scores for each input
         for filename in inputs:
             pos_score = 0
@@ -49,9 +49,9 @@ def main():
             neg_score = 0
 
             # getting the output
-            # file_path = os.path.join("audios/", filename)
+            file_path = os.path.join("audios/", filename)
             output = query(filename)
-
+            
             for emotion in output:
                 emote = emotion["label"]
                 score = emotion["score"]
@@ -63,7 +63,7 @@ def main():
                     neg_score += score
 
             emotion_scores = [pos_score, neut_score, neg_score]
-
+            
             json_ret_dict = {
                 "option": filename,
                 "emotion_scores": emotion_scores,
@@ -73,9 +73,9 @@ def main():
             output_list.append(json_ret_dict)
 
         # sorting the output in order of greatest to smallest pos_score
-        new_output_list = sorted(output_list, key=lambda d: d['emotion_scores'][0], reverse=True) 
+        new_output_list = sorted(output_list, key=lambda d: d["emotion_scores"][0], reverse=True) 
 
-        # data = new_output_list
+        # data = json_ret_dict
         data = "option " + new_output_list[0]["option"][-5] + " is your best option!"
 
         # dumping it into a json file
