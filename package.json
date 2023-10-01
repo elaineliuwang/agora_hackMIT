@@ -1,0 +1,36 @@
+{
+  "name": "audio_frontback",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "fastapi-dev": "pip3 install -r requirements.txt && python3 -m uvicorn api.index:app --reload",
+    "run-dev": "concurrently \"npm run dev\" \"npm run fastapi-dev\""
+  },
+  "dependencies": {
+    "@types/node": "20.6.2",
+    "@types/react": "18.2.21",
+    "@types/react-dom": "18.2.7",
+    "axios": "^1.5.0",
+    "eslint": "8.49.0",
+    "eslint-config-next": "13.4.19",
+    "formidable": "^3.5.1",
+    "fs": "^0.0.1-security",
+    "fs-extra": "^11.1.1",
+    "next": "13.4.19",
+    "node-fetch": "^3.3.2",
+    "python-shell": "^5.0.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "typescript": "5.2.2"
+  },
+  "devDependencies": {
+    "@types/formidable": "^3.4.3",
+    "autoprefixer": "^10.4.15",
+    "postcss": "^8.4.29",
+    "tailwindcss": "^3.3.3"
+  }
+}
